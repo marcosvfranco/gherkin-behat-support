@@ -1,0 +1,82 @@
+{
+    "Insert 'Given' Step": {
+        "prefix": "Given",
+        "body": [
+            "Given ${1:Start to type your Given step here}"
+        ]
+    },
+    "Insert 'When' Step": {
+        "prefix": "When",
+        "body": [
+            "When ${1:Start to type your When step here}"
+        ]
+    },
+    "Insert 'Then' Step": {
+        "prefix": "Then",
+        "body": [
+            "Then ${1:Start to type your Then step here}"
+        ]
+    },
+    "Insert 'But' Step": {
+        "prefix": "But",
+        "body": [
+            "But ${1:Start to type your But step here}"
+        ]
+    },
+    "Insert 'And' Step": {
+        "prefix": "And",
+        "body": [
+            "And ${1:Start to type your And step here}"
+        ]
+    },
+    "Insert Ability": {
+        "prefix": "Ability",
+        "body": [
+            "Ability: ${1:Ability name}",
+            "",
+            "   ${2:Ability Description}"
+        ]
+    },
+    "Insert Business Need": {
+        "prefix": "Business Need",
+        "body": [
+            "Business Need: ${1:Business Need name}",
+            "",
+            "   ${2:Business Need Description}"
+        ]
+    },
+    "Insert Feature": {
+        "prefix": "Feature",
+        "body": [
+            "Feature: ${1:Feature name}",
+            "",
+            "   ${2:Feature Description}"
+        ]
+    },
+    "Insert Scenario": {
+        "prefix": "Scenario",
+        "body": [
+            "Scenario: ${1:Scenario name}"
+        ]
+    },
+    "Insert Background": {
+        "prefix": "Background",
+        "body": [
+            "Background: ${1:Background name}"
+        ]
+    },
+    "Insert Scenario Outline": {
+        "prefix": "Scenario Outline",
+        "body": [
+            "Scenario Outline: ${1:Scenario Outline name}"
+        ]
+    },
+    "Insert Examples": {
+        "prefix": "Examples",
+        "body": [
+            "Examples:",
+                "| ${1:Header 1} | ${2:Header 2} | ${3:Header 3} |",
+                "| ${4:Value 1}  | ${5:Value 2}  | ${6:Value 3}  |"
+        ]
+    }
+}
