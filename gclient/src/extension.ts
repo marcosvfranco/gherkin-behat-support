@@ -28,7 +28,7 @@ export function activate(context: ExtensionContext) {
 	}
 	
 	// Create the language client and start the client.
-	let disposable = new LanguageClient('cucumberautocomplete-client', 'Cucumber auto complete plugin', serverOptions, clientOptions).start();
+	let disposable = new LanguageClient('cucumberautocomplete-behat-client', 'Cucumber auto complete plugin', serverOptions, clientOptions).start();
 	
 	//Client will be deactivate on extension deactivation
 	context.subscriptions.push(disposable);

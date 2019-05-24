@@ -112,31 +112,39 @@ export default class StepsHandler {
 
     getStepRegExp(): RegExp {
 
-        //Actually, we dont care what the symbols are before our 'Gherkin' word
-        //But they shouldn't end with letter
-        const startPart = '^((?:[^\'"\/]*?[^\\w])|.{0})';
+        let isBehat = this.settings.cucumberautocomplete.isBehatEnvironment;
 
-        //All the steps should be declared using any gherkin keyword. We should get first 'gherkin' word
-        const gherkinPart = this.settings.cucumberautocomplete.gherkinDefinitionPart || `(${allGherkinWords}|defineStep|Step|StepDefinition)`;
+        if(isBehat === true){
+            const rBehat = new RegExp(`^(?:Scenario: )(?<= )(.*)(?=\\b)`,'i');
+            return rBehat;
+        }else{
 
-        //All the symbols, except of symbols, using as step start and letters, could be between gherkin word and our step
-        const nonStepStartSymbols = `[^\/'"\`\\w]*?`;
+            //Actually, we dont care what the symbols are before our 'Gherkin' word
+            //But they shouldn't end with letter
+            const startPart = '^((?:[^\'"\/]*?[^\\w])|.{0})';
 
-        // Step part getting
-        const { stepRegExSymbol } = this.settings.cucumberautocomplete;
-        //Step text could be placed between '/' symbols (ex. in JS) or between quotes, like in Java
-        const stepStart = stepRegExSymbol ? `(${stepRegExSymbol})` : `(\/|'|"|\`)`;
-        //Our step could contain any symbols, except of our 'stepStart'. Use \3 to be sure in this
-        const stepBody = stepRegExSymbol ? `([^${stepRegExSymbol}]+)` : '([^\\3]+)';
-        //Step should be ended with same symbol it begins
-        const stepEnd = stepRegExSymbol ? stepRegExSymbol : '\\3';
+            //All the steps should be declared using any gherkin keyword. We should get first 'gherkin' word
+            const gherkinPart = this.settings.cucumberautocomplete.gherkinDefinitionPart || `(${allGherkinWords}|defineStep|Step|StepDefinition)`;
 
-        //Our RegExp will be case-insensitive to support cases like TypeScript (...@when...)
-        const r = new RegExp(startPart + gherkinPart + nonStepStartSymbols + stepStart + stepBody + stepEnd, 'i');
+            //All the symbols, except of symbols, using as step start and letters, could be between gherkin word and our step
+            const nonStepStartSymbols = `[^\/'"\`\\w]*?`;
 
-        // /^((?:[^'"\/]*?[^\w])|.{0})(Given|When|Then|And|But|defineStep)[^\/'"\w]*?(\/|'|")([^\3]+)\3/i
-        return r;
+            // Step part getting
+            const { stepRegExSymbol } = this.settings.cucumberautocomplete;
+            //Step text could be placed between '/' symbols (ex. in JS) or between quotes, like in Java
+            const stepStart = stepRegExSymbol ? `(${stepRegExSymbol})` : `(\/|'|"|\`)`;
+            //Our step could contain any symbols, except of our 'stepStart'. Use \3 to be sure in this
+            const stepBody = stepRegExSymbol ? `([^${stepRegExSymbol}]+)` : '([^\\3]+)';
+            //Step should be ended with same symbol it begins
+            const stepEnd = stepRegExSymbol ? stepRegExSymbol : '\\3';
 
+            //Our RegExp will be case-insensitive to support cases like TypeScript (...@when...)
+            const r = new RegExp(startPart + gherkinPart + nonStepStartSymbols + stepStart + stepBody + stepEnd, 'i');
+
+            // /^((?:[^'"\/]*?[^\w])|.{0})(Given|When|Then|And|But|defineStep)[^\/'"\w]*?(\/|'|")([^\3]+)\3/i
+            return r;
+
+        }
     }
 
     geStepDefinitionMatch(line: string): RegExpMatchArray {

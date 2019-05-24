@@ -2,6 +2,7 @@ import StepsHandler from '../src/steps.handler';
 import { GherkinType } from '../src/gherkin';
 import { expect } from 'chai';
 import { getFileContent } from '../src/util';
+import 'mocha';
 
 const settings = {
     cucumberautocomplete: {
@@ -10,6 +11,7 @@ const settings = {
         smartSnippets: true,
         stepsInvariants: true,
         strictGherkinCompletion: true,
+        isBehatEnvironment: false,
         customParameters: [
             {
                 parameter: '${dictionaryObject}',

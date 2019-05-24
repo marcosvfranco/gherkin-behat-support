@@ -1,20 +1,20 @@
 {
-    "name": "cucumberautocomplete-test",
-    "version": "0.1",
+    "name": "cucumberautocomplete-behat",
+    "version": "1.0.0",
     "publisher": "mviniciusfranco",
     "engines": {
         "vscode": "^1.18.0"
     },
     "license": "MIT",
-    "displayName": "Cucumber (Gherkin) Full Support - Behat",
-    "description": "VSCode Cucumber (Gherkin) Full Language Support + Formatting + Autocomplete for Behat",
-    "homepage": "https://github.com/alexkrechik/VSCucumberAutoComplete",
+    "displayName": "Cucumber (Gherkin) Support enhanced for Behat",
+    "description": "VSCode Cucumber (Gherkin) Behat Language Support + Formatting + Autocomplete enhanced for Behat",
+    "homepage": "https://github.com/marcosvfranco/gherkin-behat-support",
     "repository": {
         "type": "git",
-        "url": "https://github.com/alexkrechik/VSCucumberAutoComplete"
+        "url": "https://github.com/marcosvfranco/gherkin-behat-support"
     },
     "bugs": {
-        "url": "https://github.com/alexkrechik/VSCucumberAutoComplete/issues"
+        "url": "https://github.com/marcosvfranco/gherkin-behat-support/issues"
     },
     "categories": [
         "Programming Languages"

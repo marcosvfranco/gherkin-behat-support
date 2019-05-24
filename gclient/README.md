@@ -1,5 +1,6 @@
 # Cucumber Full Language Support
-VSCode Cucumber (Gherkin) Language Support + Format + Steps/PageObjects Autocomplete
+VSCode Cucumber (Gherkin) Language Support + Format + Steps/PageObjects Autocomplete Enhanced for Behat
+-> This version is a modified version from the original plugin.
 
 ## This extension adds rich language support for the Cucumber (Gherkin) language to VS Code, including:
 * Syntax highlight
