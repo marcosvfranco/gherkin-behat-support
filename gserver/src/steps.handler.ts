@@ -138,9 +138,18 @@ export default class StepsHandler {
             //Step should be ended with same symbol it begins
             const stepEnd = stepRegExSymbol ? stepRegExSymbol : '\\3';
 
+            let r;
             //Our RegExp will be case-insensitive to support cases like TypeScript (...@when...)
-            const r = new RegExp(startPart + gherkinPart + nonStepStartSymbols + stepStart + stepBody + stepEnd, 'i');
+            if (this.settings.cucumberautocomplete.stepRegExSymbol){
+                r = new RegExp(startPart + gherkinPart + nonStepStartSymbols + stepStart + stepBody, 'i');
+            }else{
+                r = new RegExp(startPart + gherkinPart + nonStepStartSymbols + stepStart + stepBody + stepEnd, 'i');
+            }
 
+            if(this.settings.cucumberautocomplete.gherkinDefinitionPart == '(Given|When|Then|Scenario:)'
+            ){
+                console.log(r);
+            }
             // /^((?:[^'"\/]*?[^\w])|.{0})(Given|When|Then|And|But|defineStep)[^\/'"\w]*?(\/|'|")([^\3]+)\3/i
             return r;
 
