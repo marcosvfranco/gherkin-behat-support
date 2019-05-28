@@ -1,6 +1,6 @@
 # Cucumber Full Language Support
 VSCode Cucumber (Gherkin) Language Support + Format + Steps/PageObjects Autocomplete Enhanced for Behat
--> This version is a modified version from the original plugin.
+* This version is a modified one from the original plugin for Behat users (credits to the author of the plugin, Alexander Krechik)
 
 ## This extension adds rich language support for the Cucumber (Gherkin) language to VS Code, including:
 * Syntax highlight
@@ -84,8 +84,19 @@ VSCode Cucumber (Gherkin) Language Support + Format + Steps/PageObjects Autocomp
     "cucumberautocomplete.stepRegExSymbol": "'"
 }
 ```
-#### Issues
-Fill free to create app issues on [GitHub](https://github.com/alexkrechik/VSCucumberAutoComplete/issues)
+
+#### for Behat use
+To enable features on behat, add the this lines to configuration file .vscode/settings.json
+
+```javascript
+    "cucumberautocomplete.gherkinDefinitionPart": "(Scenario:)",
+    "cucumberautocomplete.stepRegExSymbol": "."
+```
+
+For cucumberautocomplete.steps put all path of the files containing the implementation of @smartSteps
+On cucumberautocomplete.syncfeatures insert the root path of the .feature files
 
 #### Thank you
-If this plugin was helpful for you, you can give it a ★ Star on [GitHub](https://github.com/alexkrechik/VSCucumberAutoComplete)
+* If this plugin was helpful for you, you can give it a ★ Star on [GitHub](https://github.com/alexkrechik/VSCucumberAutoComplete)
+
+* For Behat users, give also a star on [GitHub](https://github.com/marcosvfranco/gherkin-behat-support)

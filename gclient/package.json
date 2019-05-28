@@ -1,7 +1,7 @@
 {
     "name": "cucumberautocomplete-behat",
     "version": "1.0.0",
-    "publisher": "mviniciusfranco",
+    "publisher": "marcosvfranco",
     "engines": {
         "vscode": "^1.18.0"
     },
